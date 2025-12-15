@@ -211,78 +211,78 @@ function initCartSection() {
     }
 }
 
-function updateCartDisplay() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartTotalElement = document.getElementById('cart-total');
+// function updateCartDisplay() {
+//     const cartItemsContainer = document.getElementById('cart-items');
+//     const cartTotalElement = document.getElementById('cart-total');
 
-    if (!cartItemsContainer || !cartTotalElement) return;
+//     if (!cartItemsContainer || !cartTotalElement) return;
 
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p class="empty-cart">Votre panier est vide</p>';
-        cartTotalElement.textContent = '0.00 €';
-        return;
-    }
+//     if (cart.length === 0) {
+//         cartItemsContainer.innerHTML = '<p class="empty-cart">Votre panier est vide</p>';
+//         cartTotalElement.textContent = '0.00 €';
+//         return;
+//     }
 
-    // Calculer le total
-    let total = 0;
+    
+//     let total = 0;
 
-    // Afficher les éléments du panier
-    cartItemsContainer.innerHTML = '';
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
+   
+//     cartItemsContainer.innerHTML = '';
+//     cart.forEach(item => {
+//         const itemTotal = item.price * item.quantity;
+//         total += itemTotal;
 
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">${item.price.toFixed(2)} €</div>
-            </div>
-            <div class="cart-item-actions">
-                <button class="quantity-btn decrease" data-id="${item.id}" aria-label="Diminuer la quantité">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <span class="cart-item-quantity">${item.quantity}</span>
-                <button class="quantity-btn increase" data-id="${item.id}" aria-label="Augmenter la quantité">
-                    <i class="fas fa-plus"></i>
-                </button>
-                <button class="remove-item" data-id="${item.id}" aria-label="Supprimer l'article">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-        `;
-        cartItemsContainer.appendChild(cartItem);
-    });
+//         const cartItem = document.createElement('div');
+//         cartItem.className = 'cart-item';
+//         cartItem.innerHTML = `
+//             <div class="cart-item-info">
+//                 <div class="cart-item-name">${item.name}</div>
+//                 <div class="cart-item-price">${item.price.toFixed(2)} €</div>
+//             </div>
+//             <div class="cart-item-actions">
+//                 <button class="quantity-btn decrease" data-id="${item.id}" aria-label="Diminuer la quantité">
+//                     <i class="fas fa-minus"></i>
+//                 </button>
+//                 <span class="cart-item-quantity">${item.quantity}</span>
+//                 <button class="quantity-btn increase" data-id="${item.id}" aria-label="Augmenter la quantité">
+//                     <i class="fas fa-plus"></i>
+//                 </button>
+//                 <button class="remove-item" data-id="${item.id}" aria-label="Supprimer l'article">
+//                     <i class="fas fa-trash"></i>
+//                 </button>
+//             </div>
+//         `;
+//         cartItemsContainer.appendChild(cartItem);
+//     });
 
-    // Mettre à jour le total
-    cartTotalElement.textContent = `${total.toFixed(2)} €`;
+    
+//     cartTotalElement.textContent = `${total.toFixed(2)} €`;
 
-    // Ajouter les événements pour les boutons du panier
-    document.querySelectorAll('.decrease').forEach(button => {
-        button.addEventListener('click', function () {
-            const productId = parseInt(this.getAttribute('data-id'));
-            updateCartItemQuantity(productId, -1);
-            updateCartDisplay();
-        });
-    });
+    
+//     document.querySelectorAll('.decrease').forEach(button => {
+//         button.addEventListener('click', function () {
+//             const productId = parseInt(this.getAttribute('data-id'));
+//             updateCartItemQuantity(productId, -1);
+//             updateCartDisplay();
+//         });
+//     });
 
-    document.querySelectorAll('.increase').forEach(button => {
-        button.addEventListener('click', function () {
-            const productId = parseInt(this.getAttribute('data-id'));
-            updateCartItemQuantity(productId, 1);
-            updateCartDisplay();
-        });
-    });
+//     document.querySelectorAll('.increase').forEach(button => {
+//         button.addEventListener('click', function () {
+//             const productId = parseInt(this.getAttribute('data-id'));
+//             updateCartItemQuantity(productId, 1);
+//             updateCartDisplay();
+//         });
+//     });
 
-    document.querySelectorAll('.remove-item').forEach(button => {
-        button.addEventListener('click', function () {
-            const productId = parseInt(this.getAttribute('data-id'));
-            removeFromCart(productId);
-            updateCartDisplay();
-        });
-    });
-}
+//     document.querySelectorAll('.remove-item').forEach(button => {
+//         button.addEventListener('click', function () {
+//             const productId = parseInt(this.getAttribute('data-id'));
+//             removeFromCart(productId);
+//             updateCartDisplay();
+//         });
+//     });
+// }
 
 // ===== INITIALISATION DE LA PAGE MENU =====
 function initMenuPage() {

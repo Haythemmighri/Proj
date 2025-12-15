@@ -58,22 +58,22 @@ function initSlideshow() {
 }
 
 // ===== GESTION DE LA NAVIGATION POUR L'INDEX =====
-function initNavigation() {
-    // Navigation entre les pages (pour la version single page)
-    document.querySelectorAll('#nav-home, #nav-menu, #nav-contact').forEach(navItem => {
-        navItem.addEventListener('click', function (e) {
-            e.preventDefault();
-            const pageId = this.id.replace('nav-', '');
+// function initNavigation() {
+  
+//     document.querySelectorAll('#nav-home, #nav-menu, #nav-contact').forEach(navItem => {
+//         navItem.addEventListener('click', function (e) {
+//             e.preventDefault();
+//             const pageId = this.id.replace('nav-', '');
             
-            // Si ce n'est pas la page d'accueil, rediriger vers la page correspondante
-            if (pageId === 'menu') {
-                window.location.href = 'menu.html';
-            } else if (pageId === 'contact') {
-                window.location.href = 'contact.html';
-            }
-        });
-    });
-}
+          
+//             if (pageId === 'menu') {
+//                 window.location.href = 'menu.html';
+//             } else if (pageId === 'contact') {
+//                 window.location.href = 'contact.html';
+//             }
+//         });
+//     });
+// }
 
 // ===== INITIALISATION DE LA PAGE D'ACCUEIL =====
 function initHomePage() {

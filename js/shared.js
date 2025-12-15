@@ -64,7 +64,7 @@ const products = [
         category: "patisseries",
         description: "Croissant au beurre feuilleté, croustillant à l'extérieur.",
         price: 2.80,
-        image: "https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/pain-au-chocolat-f7lyIJkXmua6WXAQJcDiCg5Jfj55Xv.png",
         popularity: 9
     },
     {
@@ -362,7 +362,7 @@ function closeCartPanel() {
     }
 }
 
-// ... (le reste du code shared.js reste le même, sauf pour cette partie)...
+
 
 function updateCartPanel() {
     const cartBody = document.getElementById('cart-body');
